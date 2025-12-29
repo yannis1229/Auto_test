@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://192.168.1.1/main.html -->
+<html class="" data-ng-app="routerapp"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<title>Cellular</title>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+
+<link rel="stylesheet" href="./Cellular_files/all.min.css">
+
+<script language="javascript" type="text/javascript" src="./Cellular_files/env.js.下載" id="UI_VERSION"></script>
+<script src="./Cellular_files/all.min.js.下載" id="UI_VERSION"></script>
+
+</head>
+<body class="theme-default animate">
+<noscript>
+<div class="panel-heading mantis" style="background-color: red;text-align: center;font-size: 18px">
+Please enable Javascript in your browser.
+</div></noscript>
+<div id="ajaxLoaderSection" style="display: none;">
+<div id="ajaxLoaderIcon">
+<svg height="120" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);" viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg">
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"><defs><clippath id="__lottie_element_2"><rect width="120" height="120" x="0" y="0"></rect></clippath></defs><g clip-path="url(#__lottie_element_2)"><g transform="matrix(1,0,0,1,55.59400177001953,68.78900146484375)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,4.406000137329102,-8.788999557495117)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(179,235,247)" stroke-opacity="0.5" stroke-width="12" d=" M0,-48 C26.491199493408203,-48 48,-26.491199493408203 48,0 C48,26.491199493408203 26.491199493408203,48 0,48 C-26.491199493408203,48 -48,26.491199493408203 -48,0 C-48,-26.491199493408203 -26.491199493408203,-48 0,-48z"></path></g></g><g transform="matrix(-0.6488267183303833,0.7609362006187439,-0.7609362006187439,-0.6488267183303833,56.17086410522461,50.94477844238281)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,4.406000137329102,-8.788999557495117)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(179,235,247)" stroke-opacity="1" stroke-width="12" d=" M21.117000579833984,-43.11000061035156 C36.59199905395508,-35.507999420166016 47.38800048828125,-19.81800079345703 47.974998474121094,-1.5679999589920044"></path></g></g></g></svg></div><span id="loading_message">Please wait...</span>
+</div>
+<div class="ngdialog ngdialog-theme-default dialogwidth800 " id="confirm_dialog_zone" role="alertdialog" style="display: none; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+<div class="ngdialog-overlay"></div>
+<div class="ngdialog-content" role="document">
+<div class="ngdialog-message">
+<h4 class="ng-binding" id="confirm_dialog_msg"></h4>
+</div>
+<div class="ngdialog-buttons">
+<button class="ngdialog-button gemtek-btn-normal ng-binding multi_lang" id="lang_confirm_btn_cancel" type="button" onclick="close_confirm()">Cancel</button> <button class="ngdialog-button gemtek-btn-primary ng-binding multi_lang" id="confirm_dialog_confirmed" type="button">Ok</button>
+</div>
+</div>
+</div>
+<div class="" id="main-wrapper">
+<div class="navbar navbar-inverse" id="main-navbar" role="navigation">
+<button id="main-menu-toggle" type="button"><i class="navbar-icon fa fa-bars icon"></i></button>
+<div class="navbar-inner">
+<div class="navbar-header">
+<a href=" target="_blank"><button class="navbar-brand"><img src=" " style="width: 100%;"></button></a> <button class="navbar-toggle collapsed" data-target="#main-navbar-collapse" data-toggle="collapse" type="button"><i class="navbar-icon fa fa-bars"></i></button>
+</div>
+<div class="collapse navbar-collapse main-navbar-collapse" id="main-navbar-collapse">
+<div class="right clearfix theme-2-menu1 hide">
+<ul class="nav nav-tabs mainmenu" id="mainmenu">
+
+</ul>
+</div>
+<div class="right clearfix">
+<ul class="nav navbar-nav headersec">
+<li>
+<a id="switchwidget"><img src="./Cellular_files/system-white.svg"><span>Quick Set</span><span class="fa fa-angle-down" style="margin-left: 3px;"></span></a> 
+</li>
+<li>
+<div class="no-padding-vr">
+<a title="Language" href="javascript:menu_selector(this,&#39;management/language&#39;,&#39;management/management-language.html&#39;,&#39;lang_submenu_management_language&#39;)" style="cursor: pointer; color: inherit; text-decoration: none;">
+<img src="./Cellular_files/language.svg">
+<span id="header_home" style="padding-right: 15px; padding-left: 3px;">English</span>
+</a>
+</div>
+<div class="language">
+<div>
+<ul class="notification_ul">
+<li class="lang-active" style="cursor: pointer" value="en">
+<img class="icon-visible" src="./Cellular_files/checked.svg">
+<p>English</p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li>
+<div class="no-padding-vr">
+<img src="./Cellular_files/user.svg"> <span class="ng-binding" style="padding-right:15px;" id="login_account_user">admin</span>
+</div>
+</li>
+<li>
+<a title="Logout" href="javascript:logout()"><img src="./Cellular_files/logout.svg" style="cursor: pointer;"> <span class="multi_lang" id="lang_logout">Logout</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="main-menu" role="navigation">
+<div id="main-menu-inner">
+<ul class="nav nav-tabs theme-1-menu1 mainmenu mainmenu_zone" id="mainmenu"><li id="menu_dashboard_item" class="sidebarItem"><button id="menu_dashboard" name="menu_dashboard" class="menu_element menu_class_dashboard fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle" onclick="menu_selector(this,&#39;dashboard&#39;,&#39;dashboard.html&#39;,&#39;lang_mainmenu_dashboard&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/ico-home.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_dashboard">Home</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"></ul></li><li id="menu_status_item" class="sidebarItem"><button id="menu_status" name="menu_status" class="menu_element menu_class_status  fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle" onclick="menu_selector(this,&#39;status&#39;,&#39;open&#39;,&#39;lang_mainmenu_status&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/menu-status.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_status">Status</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"><li class="no-padding-hr no-margin-vr" id="menu_status_wan_item"><a tabindex="-1" class="submenu_element" id="menu_status_wan" type="custom" source="stats" onclick="menu_selector(this,&#39;status/wan&#39;,&#39;status/status-single_wan.html&#39;,&#39;lang_submenu_status_wan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_wan">WAN</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_backup_wan_item"><a tabindex="-1" class="submenu_element" id="menu_status_backup_wan" type="custom" source="stats" onclick="menu_selector(this,&#39;status/backup_wan&#39;,&#39;status/status-backup_wan.html&#39;,&#39;lang_submenu_status_backup_wan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_backup_wan">WAN Failover</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_lan_item"><a tabindex="-1" class="submenu_element" id="menu_status_lan" type="custom" source="stats" onclick="menu_selector(this,&#39;status/lan&#39;,&#39;status/status-lan.html&#39;,&#39;lang_submenu_status_lan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_lan">LAN</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_statistics_item"><a tabindex="-1" class="submenu_element" id="menu_status_statistics" type="custom" source="stats" onclick="menu_selector(this,&#39;status/statistics&#39;,&#39;status/status-statistics.html&#39;,&#39;lang_submenu_status_statistics&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_statistics">Statistics</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_throughput_item"><a tabindex="-1" class="submenu_element" id="menu_status_throughput" type="custom" source="stats" onclick="menu_selector(this,&#39;status/throughput&#39;,&#39;status/status-throughput.html&#39;,&#39;lang_submenu_status_throughput&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_throughput">Throughput</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_wifiNeighbor_item"><a tabindex="-1" class="submenu_element" id="menu_status_wifiNeighbor" type="custom" source="stats" onclick="menu_selector(this,&#39;status/wifiNeighbor&#39;,&#39;status/status-wifiNeighbor.html&#39;,&#39;lang_submenu_status_wifiNeighbor&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_wifiNeighbor">WiFi Neighbor</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_wifiMesh_item"><a tabindex="-1" class="submenu_element" id="menu_status_wifiMesh" type="custom" source="stats" onclick="menu_selector(this,&#39;status/wifiMesh&#39;,&#39;status/status-wifiMesh.html&#39;,&#39;lang_submenu_status_wifiMesh&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_wifiMesh">Mesh information</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_dualImage_item"><a tabindex="-1" class="submenu_element" id="menu_status_dualImage" type="custom" source="stats" onclick="menu_selector(this,&#39;status/dualImage&#39;,&#39;status/status-dualImage.html&#39;,&#39;lang_submenu_status_dualImage&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_dualImage">Dual Image</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_status_cellular_item"><a tabindex="-1" class="submenu_element" id="menu_status_cellular" type="custom" source="stats" onclick="menu_selector(this,&#39;status/cellular&#39;,&#39;status/status-cellular.html&#39;,&#39;lang_submenu_status_cellular&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_status_cellular">Cellular</span></a></li></ul></li><li id="menu_basic_setting_item" class="sidebarItem open"><button id="menu_basic_setting" name="menu_basic_setting" class="menu_element menu_class_basic_setting  fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle menuitem-highlight" onclick="menu_selector(this,&#39;basic_setting&#39;,&#39;open&#39;,&#39;lang_mainmenu_basic_setting&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/menu-basic.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_basic_setting">Basic Setup</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_wan_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_wan" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/wan&#39;,&#39;basic_setting/basic_setting-wan-single_wan.html&#39;,&#39;lang_submenu_basic_setting_wan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_wan">WAN</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_backup_wan_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_backup_wan" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/backup_wan&#39;,&#39;basic_setting/backup_wan/basic_setting-backup_wan.html&#39;,&#39;lang_submenu_basic_setting_backup_wan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_backup_wan">WAN Health Check</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_lan_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_lan" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/lan&#39;,&#39;basic_setting/lan/basic_setting-lan-lan4.html&#39;,&#39;lang_submenu_basic_setting_lan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_lan">LAN</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_wlan_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_wlan" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/wlan&#39;,&#39;basic_setting/undefined&#39;,&#39;lang_submenu_basic_setting_wlan&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_wlan">WLAN</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_cellular_item"><a tabindex="-1" class="submenu_element menuitem-highlight" id="menu_basic_setting_cellular" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/cellular&#39;,&#39;basic_setting/basic_setting-cellular.html&#39;,&#39;lang_submenu_basic_setting_cellular&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_cellular">Cellular</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_nat_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_nat" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/nat&#39;,&#39;basic_setting/nat/basic_setting-nat-portforward.html&#39;,&#39;lang_submenu_basic_setting_nat&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_nat">NAT</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_security_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_security" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/security&#39;,&#39;basic_setting/security/basic_setting-seciruty-ipfilter.html&#39;,&#39;lang_submenu_basic_setting_security&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_security">Security</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_basic_setting_routing_item"><a tabindex="-1" class="submenu_element" id="menu_basic_setting_routing" type="custom" source="stats" onclick="menu_selector(this,&#39;basic_setting/routing&#39;,&#39;basic_setting/basic_setting-routing.html&#39;,&#39;lang_submenu_basic_setting_routing&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_basic_setting_routing">Routing</span></a></li></ul></li><li id="menu_adv_setting_item" class="sidebarItem"><button id="menu_adv_setting" name="menu_adv_setting" class="menu_element menu_class_adv_setting  fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle" onclick="menu_selector(this,&#39;adv_setting&#39;,&#39;open&#39;,&#39;lang_mainmenu_adv_setting&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/menu-advanced.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_adv_setting">Advance Setup</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"><li class="no-padding-hr no-margin-vr" id="menu_adv_setting_ssh_item"><a tabindex="-1" class="submenu_element" id="menu_adv_setting_ssh" type="custom" source="stats" onclick="menu_selector(this,&#39;adv_setting/ssh&#39;,&#39;adv_setting/adv_setting-ssh.html&#39;,&#39;lang_submenu_adv_setting_ssh&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_adv_setting_ssh">SSH Service</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_adv_setting_service_control_item"><a tabindex="-1" class="submenu_element" id="menu_adv_setting_service_control" type="custom" source="stats" onclick="menu_selector(this,&#39;adv_setting/service_control&#39;,&#39;adv_setting/adv_setting-service_control.html&#39;,&#39;lang_submenu_adv_setting_service_control&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_adv_setting_service_control">Service Control</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_adv_setting_usp_agent_item"><a tabindex="-1" class="submenu_element" id="menu_adv_setting_usp_agent" type="custom" source="stats" onclick="menu_selector(this,&#39;adv_setting/usp_agent&#39;,&#39;adv_setting/adv_setting-usp_agent.html&#39;,&#39;lang_submenu_adv_setting_usp_agent&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_adv_setting_usp_agent">USP Agent</span></a></li></ul></li><li id="menu_application_item" class="sidebarItem"><button id="menu_application" name="menu_application" class="menu_element menu_class_application  fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle" onclick="menu_selector(this,&#39;application&#39;,&#39;open&#39;,&#39;lang_mainmenu_application&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/menu-security.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_application">Application</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"><li class="no-padding-hr no-margin-vr" id="menu_application_upnp_item"><a tabindex="-1" class="submenu_element" id="menu_application_upnp" type="custom" source="stats" onclick="menu_selector(this,&#39;application/upnp&#39;,&#39;application/application-upnp.html&#39;,&#39;lang_submenu_application_upnp&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_application_upnp">UPnP</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_application_ddns_item"><a tabindex="-1" class="submenu_element" id="menu_application_ddns" type="custom" source="stats" onclick="menu_selector(this,&#39;application/ddns&#39;,&#39;application/application-ddns.html&#39;,&#39;lang_submenu_application_ddns&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_application_ddns">DDNS</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_application_storage_item"><a tabindex="-1" class="submenu_element" id="menu_application_storage" type="custom" source="stats" onclick="menu_selector(this,&#39;application/storage&#39;,&#39;application/storage/application-storage-storage_info.html&#39;,&#39;lang_submenu_application_storage&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_application_storage">Storage Service</span></a></li></ul></li><li id="menu_management_item" class="sidebarItem"><button id="menu_management" name="menu_management" class="menu_element menu_class_management  fa fa-angle-right dropdown-btn dropdown-btn-menu no-padding-hr dropdown-toggle" onclick="menu_selector(this,&#39;management&#39;,&#39;open&#39;,&#39;lang_mainmenu_management&#39;)"><img class="menu-icon ltq-icon t1" src="./Cellular_files/menu-utilities.svg"><span class="mm-text menu-title ng-binding multi_lang" id="lang_mainmenu_management">Management</span></button><ul class="mmc-dropdown-delay animated fadeInLeft navigation ltq_submenu dropdown-menu dropdown-side-menu no-padding-vr" href="#"><li class="no-padding-hr no-margin-vr" id="menu_management_reboot_item"><a tabindex="-1" class="submenu_element" id="menu_management_reboot" type="custom" source="stats" onclick="menu_selector(this,&#39;management/reboot&#39;,&#39;management/management-reboot.html&#39;,&#39;lang_submenu_management_reboot&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_reboot">Reboot</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_management_account_item"><a tabindex="-1" class="submenu_element" id="menu_management_account" type="custom" source="stats" onclick="menu_selector(this,&#39;management/account&#39;,&#39;management/management-account.html&#39;,&#39;lang_submenu_management_account&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_account">Account Management</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_management_language_item"><a tabindex="-1" class="submenu_element" id="menu_management_language" type="custom" source="stats" onclick="menu_selector(this,&#39;management/language&#39;,&#39;management/management-language.html&#39;,&#39;lang_submenu_management_language&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_language">Language</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_management_ntp_item"><a tabindex="-1" class="submenu_element" id="menu_management_ntp" type="custom" source="stats" onclick="menu_selector(this,&#39;management/ntp&#39;,&#39;management/management-ntp.html&#39;,&#39;lang_submenu_management_ntp&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_ntp">NTP</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_management_settings_item"><a tabindex="-1" class="submenu_element" id="menu_management_settings" type="custom" source="stats" onclick="menu_selector(this,&#39;management/settings&#39;,&#39;management/undefined&#39;,&#39;lang_submenu_management_settings&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_settings">Settings</span></a></li><li class="no-padding-hr no-margin-vr" id="menu_management_tools_item"><a tabindex="-1" class="submenu_element" id="menu_management_tools" type="custom" source="stats" onclick="menu_selector(this,&#39;management/tools&#39;,&#39;management/settings/management-tools-ping.html&#39;,&#39;lang_submenu_management_tools&#39;)"><span class="mm-text ng-binding multi_lang" id="lang_submenu_management_tools">Tools</span></a></li></ul></li></ul>
+</div>
+</div>
+<div id="content-wrapper" style="min-height: 732px;">
+<div class="" data-ng-view="true" id="dataView">
+<div class="container-fluid no-padding-hr" id="homepage">
+<h4 class="ng-binding" id="homepage_tile">Cellular</h4>
+<div>
+<span class="gemtek-home-breadcrumbs" id="homepage_quick_link">Basic Setup / Cellular</span>
+</div>
+<div class="row no-margin-hr" id="global_warning_msg_zone" style="display: none;">
+<div class="alert alert-danger">
+<a aria-label="close" class="close" for="global_warning_msg_zone" onclick="warning_control(&#39;off&#39;,&#39;global&#39;)">×</a><strong class="ng-binding">Warning!</strong>
+<span class="ng-binding" id="global_warning_msg"></span>
+</div>
+</div><br>
+<br>
+<div id="main-content" class=""><script type="text/javascript">
+var ORIGINAL_OBJ_DATA = {}
+var MODIFIED_OBJ_DATA = {}
+</script>
+
+<div class="panel ng-scope" id="leaf_page_zone" style="display:none;">
+<div class="alert alert-danger" id="page_warning_msg_zone" style="display:none;">
+<a aria-label="close" class="close" onclick="warning_control(&#39;off&#39;,&#39;page&#39;)">✖</a>
+<p class="ng-binding" id="page_warning_msg"></p>
+</div>
+<div class="panel-heading ng-binding" style="display:none;">
+<span class="" id="leaf_page_title"></span>
+</div>
+<div class="panel-body" id="leaf_page_content">
+</div>
+<div class="text-center" style="padding:30px 0;border-top: 1px solid #dee5ec;width: calc(100% - 40px);margin: 0 auto;" id="leaf_page_footer">
+</div>
+</div>
+
+<div class="panel ng-scope" id="view_page_zone"><script type="text/javascript">
+var OBJ_LIST = ['Cellular']
+var INFO_LIST = ['CellularInfo']
+var ORIGINAL_OBJ_DATA = {}
+var MODIFIED_OBJ_DATA = {}
+var network_mode_str = ['5G/4G','5G','4G'];
+var network_mode_val = ['54g','5g','4g'];
+var pdp_type_str = ['IPv4','IPv6','IPv4/v6'];
+var pdp_type_val = ['ip','ipv6','ipv4v6'];
+var auth_str = ['NONE','PAP','CHAP'];
+var auth_val = ['none','pap','chap'];
+</script>
+
+<div class="wrapperdiv">
+<div class="panel-heading ng-binding " style="">
+<span class="multi_lang" id="lang_cellular_common_zone_title">Common Configuration</span>
+</div>
+<div class="panel-body">
+<div id="select_network_mode" class="form-group no-padding-hr col-xs-12 col-sm-12">		<div class=" row ng-show">		<label class="col-xs-12 no-padding-hr-l control-label gemtek-dropdown-label"><span class="multi_lang" id="lang_network_mode">Network Mode</span></label>		<div id="select_div_network_mode" class="no-padding-hr-l col-xs-12 col-sm-5" style="margin-top: 20px;">		<select type="text" class="dropdown-toggle form-control1 hidden-dom-removal" id="network_mode" name="network_mode" onchange="">				<option value="54g" selected="" class="multi_lang" id="lang_5G/4G">5G/4G</option>				<option value="5g" class="multi_lang" id="lang_5G">5G</option>				<option value="4g" class="multi_lang" id="lang_4G">4G</option>			</select>	</div>	</div>			</div>
+<div id="switch_auto_connect" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row switchblock gemtek-switchblock-no-padding-left gemtek-toggle-label">	<label class="control-label" for="auto_connect"><span class="multi_lang" id="lang_auto_connect">Enable Auto Connection</span></label>	<div class="text-left">	<span class="switch hidden-dom-removal checked" id="switch_layout_auto_connect" onclick="switcher_handler(&#39;auto_connect&#39;,&#39;&#39;,&#39;switch_toggle(\&#39;auto_connect\&#39;, \&#39;2\&#39;)&#39;)"><small></small>	<input id="auto_connect" type="checkbox" name="" value="1" style="display:none">	<span class="switch-text"><span class="off">OFF</span></span>	</span>	</div>	</div>	</div>
+<div id="switch_roaming" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row switchblock gemtek-switchblock-no-padding-left gemtek-toggle-label">	<label class="control-label" for="roaming"><span class="multi_lang" id="lang_roaming">Enable Roaming</span></label>	<div class="text-left">	<span class="switch hidden-dom-removal" id="switch_layout_roaming" onclick="switcher_handler(&#39;roaming&#39;,&#39;&#39;,&#39;switch_toggle(\&#39;roaming\&#39;, \&#39;2\&#39;)&#39;)"><small></small>	<input id="roaming" type="checkbox" name="" value="0" style="display:none">	<span class="switch-text"><span class="off">OFF</span></span>	</span>	</div>	</div>	</div>
+<div id="input_dl_limit" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="dl_limit" name="dl_limit" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="dl_limit"><span class="multi_lang" id="lang_dl_limit">Download Limit</span></label>	<span class="error" id="dl_limit_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="input_up_limit" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="up_limit" name="up_limit" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="up_limit"><span class="multi_lang" id="lang_up_limit">Upload Limit</span></label>	<span class="error" id="up_limit_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="input_usage_limit" class="form-group no-padding-hr col-xs-12 col-sm-12">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-6">	<input class="form-control hidden-dom-removal def_placeholder" id="usage_limit" name="usage_limit" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="usage_limit"><span class="multi_lang" id="lang_usage_limit">Usage Limit</span></label>	<span class="error" id="usage_limit_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="input_usage_dl_limit" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="usage_dl_limit" name="usage_dl_limit" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="usage_dl_limit"><span class="multi_lang" id="lang_usage_dl_limit">Usage Download Limit</span></label>	<span class="error" id="usage_dl_limit_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="input_usage_up_limit" class="form-group no-padding-hr col-xs-12 col-sm-6">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="usage_up_limit" name="usage_up_limit" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="usage_up_limit"><span class="multi_lang" id="lang_usage_up_limit">Usage Upload Limit</span></label>	<span class="error" id="usage_up_limit_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+</div>
+<div class="panel-heading ng-binding " style="">
+<span class="multi_lang" id="lang_cellular_apn_zone_title">APN Configuration</span>
+</div>
+<div class="panel-body">
+<div id="select_pdp_type" class="form-group no-padding-hr col-xs-12 col-sm-12">		<div class=" row ng-show">		<label class="col-xs-12 no-padding-hr-l control-label gemtek-dropdown-label"><span class="multi_lang" id="lang_pdp_type">PDP Type</span></label>		<div id="select_div_pdp_type" class="no-padding-hr-l col-xs-12 col-sm-5" style="margin-top: 20px;">		<select type="text" class="dropdown-toggle form-control1 hidden-dom-removal" id="pdp_type" name="pdp_type" onchange="">				<option value="ip" selected="" class="multi_lang" id="lang_IPv4">IPv4</option>				<option value="ipv6" class="multi_lang" id="lang_IPv6">IPv6</option>				<option value="ipv4v6" class="multi_lang" id="lang_IPv4/v6">IPv4/v6</option>			</select>	</div>	</div>			</div>
+<div id="radio_apn_mode" class="raw no-padding-hr col-xs-12 col-sm-12 "><div class="form-group">		<span class="ng-binding multi_lang" id="lang_apn_mode">APN Setting</span> <label for=""></label>		<div class="radiogroup"><input class="with-gap" id="auto_apn" type="radio" name="apn_mode" onclick="switch_radio(this)"><label for="auto_apn"><span class="multi_lang" id="lang_auto_apn">Auto</span></label><input class="with-gap" id="manual_apn" type="radio" name="apn_mode" onclick="switch_radio(this)"><label for="manual_apn"><span class="multi_lang" id="lang_manual_apn">Manual</span></label></div>		<span class="error" style="display:none"></span>		</div></div>
+<div id="input_apn" class="form-group no-padding-hr col-xs-12 col-sm-6 apn_type_show" style="display: none;">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="apn" name="apn" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="apn"><span class="multi_lang" id="lang_apn">APN</span></label>	<span class="error" id="apn_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="select_auth" class="form-group no-padding-hr col-xs-12 col-sm-12 apn_type_show" style="display: none;">		<div class=" row ng-show">		<label class="col-xs-12 no-padding-hr-l control-label gemtek-dropdown-label"><span class="multi_lang" id="lang_auth">Authentication</span></label>		<div id="select_div_auth" class="no-padding-hr-l col-xs-12 col-sm-5" style="margin-top: 20px;">		<select type="text" class="dropdown-toggle form-control1 hidden-dom-removal" id="auth" name="auth" onchange="">				<option value="none" selected="" class="multi_lang" id="lang_NONE">NONE</option>				<option value="pap" class="multi_lang" id="lang_PAP">PAP</option>				<option value="chap" class="multi_lang" id="lang_CHAP">CHAP</option>			</select>	</div>	</div>			</div>
+<div id="input_username" class="form-group no-padding-hr col-xs-12 col-sm-6 apn_type_show" style="display: none;">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="username" name="username" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="username"><span class="multi_lang" id="lang_username">Username</span></label>	<span class="error" id="username_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+<div id="input_password" class="form-group no-padding-hr col-xs-12 col-sm-6 apn_type_show" style="display: none;">	<div class="row">	<div class="input-field no-padding-hr-l col-xs-12 col-sm-12">	<input class="form-control hidden-dom-removal def_placeholder" id="password" name="password" placeholder="Please Enter the value" required="required" type="text" maxlength="" onblur="">	<label class="row active ng-binding" for="password"><span class="multi_lang" id="lang_password">Password</span></label>	<span class="error" id="password_error_msg" style="display:none">* This Field is Required</span>	</div>	</div>	</div>
+</div>
+
+
+<div class="text-center" style="padding:30px 0;border-top: 1px solid #dee5ec;width: calc(100% - 40px);margin: 0 auto;">
+<div class="btn-align" id="btn_cancel">	<input class="gemtek-btn-normal" id="cancel" type="button" value="Cancel" onclick="page_initial()">	</div>
+<div class="btn-align" id="btn_apply">	<input class="gemtek-btn-primary" id="apply" type="button" value="Apply" onclick="page_save()">	</div>
+</div>
+
+</div>
+<script type="text/javascript" language="javascript">
+page_tag='basic_setting-cellular'
+lang_tag='basic_setting_cellular'
+$(document).ready(function(){
+$.lang_load(lang_tag);
+page_initial()
+});
+
+var LOADING_TIME = 30000
+
+function loading_wait(){
+var process_percentage = 0
+var bar_timer
+var intervalTimes = LOADING_TIME/100
+
+$("#loading_message").html(L.common.lang_plz_wait+"<br/>0%")
+
+bar_timer = setInterval(function(){
+process_percentage = process_percentage + 1
+$("#loading_message").html(L.common.lang_plz_wait+"<br/>"+process_percentage+"%")
+if( 100 == process_percentage ){
+clearInterval(bar_timer)
+loading_control(0);
+}
+},intervalTimes);
+}
+
+function limit_rate(){
+var dl_val = $("#dl_limit").val();
+var up_val = $("#up_limit").val();
+if (dl_val < 0 || dl_val > 204800){
+warning_control('on','global',L.basic_setting_cellular.lang_dl_limit_error)
+return false;
+} else if(up_val < 0 || up_val > 204800) {
+warning_control('on','global',L.basic_setting_cellular.lang_up_limit_error)
+return false;
+}else{
+MODIFIED_OBJ_DATA.Cellular.CellularP.UPRateLimit = up_val
+MODIFIED_OBJ_DATA.Cellular.CellularP.DLRateLimit = dl_val
+return true;
+}
+}
+
+function select_authentication(type) {
+if(typeof(type)=="undefined")
+type = MODIFIED_OBJ_DATA.Cellular.CellularP.Auth = $("#auth").val()
+else
+MODIFIED_OBJ_DATA.Cellular.CellularP.Auth = type
+
+$("#auth").val(type)
+}
+
+function select_network_mode(mode){
+if(typeof(mode)=="undefined")
+mode = MODIFIED_OBJ_DATA.Cellular.CellularP.NetworkMode = $("#network_mode").val()
+else
+MODIFIED_OBJ_DATA.Cellular.CellularP.NetworkMode = mode
+
+$("#network_mode").val(mode)
+}
+
+function switch_radio(obj, flag){
+if (obj.id == "auto_apn") {
+$(".apn_type_show").hide();
+MODIFIED_OBJ_DATA.Cellular.CellularP.APNMode = "auto"
+} else if (obj.id == "manual_apn") {
+$(".apn_type_show").show();
+MODIFIED_OBJ_DATA.Cellular.CellularP.APNMode = "manual"
+} else {
+$(".apn_type_show").hide();
+MODIFIED_OBJ_DATA.Cellular.CellularP.APNMode = "auto"
+}
+
+}
+
+function switch_apn_mode(mode){
+if (mode == "auto") {
+$("#auto_apn").prop("checked", true)
+$("#manual_apn").prop("checked", false)
+switch_radio($("#auto_apn")[0])
+} if (mode == "manual") {
+$("#manual_apn").prop("checked", true)
+$("#auto_apn").prop("checked", false)
+switch_radio($("#manual_apn")[0])
+} else {
+$("#auto_apn").prop("checked", true)
+$("#manual_apn").prop("checked", false)
+switch_radio($("#auto_apn")[0])
+}
+}
+
+function switch_toggle(id, val) {
+if(typeof(val) == "undefined" || val == "2"){  // val: 2 is from GUI trigger
+val = $('#'+id).val()
+}
+
+if(val == "1"){
+if(id=="auto_connect"){
+MODIFIED_OBJ_DATA.Cellular.CellularP.AutoConnectEnabled = "1";
+}
+if(id=="roaming"){
+MODIFIED_OBJ_DATA.Cellular.CellularP.RoamingEnabled = "1";
+}
+} else {
+if(id=="auto_connect"){
+MODIFIED_OBJ_DATA.Cellular.CellularP.AutoConnectEnabled = "0";
+}
+if(id=="roaming"){
+MODIFIED_OBJ_DATA.Cellular.CellularP.RoamingEnabled = "0";
+}
+}
+
+switcher_handler(id,val)
+}
+
+function layout_init(obj){
+
+if (obj.Cellular.CellularP.AutoConnectEnabled == "1")
+switcher_handler('auto_connect', obj.Cellular.CellularP.AutoConnectEnabled, 'switch_toggle(\'auto_connect\',\'1\')');
+else
+switcher_handler('auto_connect', obj.Cellular.CellularP.AutoConnectEnabled, 'switch_toggle(\'auto_connect\',\'0\')');
+
+if (obj.Cellular.CellularP.RoamingEnabled == "1")
+switcher_handler('roaming', obj.Cellular.CellularP.RoamingEnabled, 'switch_toggle(\'roaming\',\'1\')');
+else
+switcher_handler('roaming', obj.Cellular.CellularP.RoamingEnabled, 'switch_toggle(\'roaming\',\'0\')');
+
+select_network_mode(obj.Cellular.CellularP.NetworkMode)
+
+$("#dl_limit").val(obj.Cellular.CellularP.DLRateLimit)
+$("#up_limit").val(obj.Cellular.CellularP.UPRateLimit)
+$("#usage_limit").val(obj.Cellular.CellularP.DLUsageLimit)
+$("#usage_dl_limit").val(obj.Cellular.CellularP.UsageDownloadLimit)
+$("#usage_up_limit").val(obj.Cellular.CellularP.UsageUploadLimit)
+$("#pdp_type").val(obj.Cellular.CellularP.PDPType)
+$("#apn").val(obj.Cellular.CellularP.APN)
+
+
+switch_apn_mode(obj.Cellular.CellularP.APNMode)
+select_authentication(obj.Cellular.CellularP.Auth)
+
+$("#username").val(obj.Cellular.CellularP.Username)
+$("#password").val(obj.Cellular.CellularP.Password)
+set_trafficcontrol_status()
+}
+
+function get_obj_success_cb(obj) {
+ORIGINAL_OBJ_DATA = API.obj.copy(obj);
+MODIFIED_OBJ_DATA = API.obj.copy(ORIGINAL_OBJ_DATA);
+layout_init(ORIGINAL_OBJ_DATA)
+}
+function get_obj_error_cb(obj) {
+
+}
+function get_obj_data(obj_list){
+API.obj.get(obj_list, get_obj_success_cb, get_obj_error_cb);
+}
+function page_initial(){
+//Coding initial function here
+get_info_data(INFO_LIST)
+}
+
+function page_save(){
+if (! limit_rate()){
+return;
+}
+
+MODIFIED_OBJ_DATA.Cellular.CellularP.NetworkMode = $("#network_mode").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.PDPType = $("#pdp_type").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.APN = $("#apn").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.Auth = $("#auth").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.Username = $("#username").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.Password = $("#password").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.DLUsageLimit = $("#usage_limit").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.UsageDownloadLimit = $("#usage_dl_limit").val();
+MODIFIED_OBJ_DATA.Cellular.CellularP.UsageUploadLimit = $("#usage_up_limit").val();
+warning_control('off','global')
+loading_control(1)
+set_obj_data(MODIFIED_OBJ_DATA)
+}
+function set_obj_success_cb(obj) {
+loading_wait()
+}
+function set_obj_error_cb(obj) {
+loading_control(0);
+if(obj.api_return == 403){
+logout('sto')
+return;
+}else{
+pop_alert_message(L.common.lang_error_msg,'error')
+}
+//show_alert(L.common.fail_title, L.common.save_fail)
+}
+function set_obj_data(obj_content){
+if(typeof(obj_content) == 'string')
+API.obj.set(JSON.parse(obj_content), set_obj_success_cb, set_obj_error_cb);
+else if(typeof(obj_content) == 'object')
+API.obj.set(obj_content, set_obj_success_cb, set_obj_error_cb);
+}
+
+function get_info_data(info_list){
+API.info.get(info_list, get_info_success_cb, get_info_error_cb);
+}
+
+function get_info_success_cb(obj) {
+INFO_DATA = API.obj.copy(obj);
+get_obj_data(OBJ_LIST)
+
+}	function get_info_error_cb(obj) {
+if(obj.api_return == 403) {
+logout('sto');
+}
+}
+function set_trafficcontrol_status() {
+// Get the value of the client update switch
+var st = INFO_DATA.CellularInfo.TrafficControl
+// If the client update switch is set to "0", disable NTP server inputs
+if (st == "1") {
+$('#up_limit').prop('disabled', true).addClass('is-disabled');
+$('#up_limit').parent('.el-input').addClass('is-disabled');
+$('#dl_limit ').attr("disabled", true);
+$('#dl_limit ').parent('div.el-input').addClass("is-disabled");
+}
+// Otherwise, enable NTP server inputs
+else {
+$('#up_limit').prop('disabled', false).removeClass('is-disabled');
+$('#up_limit').parent('.el-input').removeClass('is-disabled');
+$('#dl_limit').removeAttr("disabled");
+$('#dl_limit').parent('div.el-input').removeClass("is-disabled");
+}
+}
+
+</script>
+
+</div>
+
+<script type="text/javascript" language="javascript">
+$(document).ready(function () {
+singlepage_layout_handler()
+});
+</script>
+
+</div>
+</div>
+</div>
+<footer class="footer">
+</footer>
+</div>
+<div id="main-menu-bg"></div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModalHorizontal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+</div>
+<div class="modal-body">
+<form class="form-horizontal ng-pristine ng-valid" role="form">
+<div class="form-group">
+<label class="col-sm-12 col-lg-3 col-md-3 col-xs-12 control-label" for="Status">Progress:</label>
+<div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+<div class="progress-striped active progress">
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="" aria-valuetext="%" class="progress-bar" role="progressbar" style="width: 100%;">
+<span class="ng-binding"></span><i class=" ng-hide">!!! Watch out !!!</i>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-12 col-lg-3 col-md-3 col-xs-12 control-label" for="Status">Status</label>
+<div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+<input class="form-control" id="Status" placeholder="WPS Session Start" type="text">
+</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button class="btn btn-info" data-dismiss="modal" data-ng-click="cancelInterval()" type="button">Abort WPS</button>
+</div>
+</div>
+</div>
+</div>
+<!--[if !IE]> -->
+<script type="text/javascript">
+window.jQuery || document.write('<script src="js/Jquery/jquery1.9.1.min.js">' + "<" + "/script>");
+</script> 
+<!--[if lte IE 9]>
+<script type="text/javascript"> window.jQuery || document.write('<script src="js/Jquery/jquery1.9.1.min.js">' + "<" + "/script>");</script>
+<![endif]-->
+
+<script type="text/javascript">
+$(document).ready(function () {
+updateHeaderLanguage();
+TARGET_PAGE_DATA=get_target_page()
+if (TARGET_PAGE_DATA == "")
+TARGET_PAGE_DATA="dashboard"
+
+VIEW_HANDLER(TARGET_PAGE_DATA)
+});
+
+function updateHeaderLanguage() {
+const lang = localStorage.lang || "en";
+const header = document.getElementById('header_home');
+
+if (lang === "en") {
+header.textContent = "English";
+} else if (lang === "ca") {
+header.textContent = "Français Canadien";
+} else {
+header.textContent = "English";
+}
+}
+</script>
+<div class="hiddendiv common"></div>
+
+</body></html>
